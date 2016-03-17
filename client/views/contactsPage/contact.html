@@ -1,0 +1,14 @@
+<template name="contact">
+	<tr>
+		<td class="contact-row deselected-contact">
+			<input type="checkbox" name="{{fullName}}" id="{{email}}" class="contact"/>
+			<label for="{{email}}"></label>
+			<label for="{{email}}">
+			<span class="contact-name">
+					{{formattedName fullName}}
+			</span>
+		</label>
+		</td>
+	</tr>
+	<br>
+</template>

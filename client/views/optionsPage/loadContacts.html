@@ -1,0 +1,8 @@
+<template name="loadContacts">
+  <button id="add-contacts" class="options-button">Load Contacts from Device</button>
+  <br>
+  {{#if isLoading}}
+    {{> loading}}
+    <p class=load-message >{{loadMessage}}</p>
+  {{/if}}
+</template>

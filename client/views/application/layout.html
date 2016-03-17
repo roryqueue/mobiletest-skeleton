@@ -1,0 +1,10 @@
+<template name="layout">
+    {{#if iphone}}
+      <div id="headspacer"></div>
+      <div id="headspacer-behind"></div>
+    {{/if}}
+    <div id="main" class="row">
+      {{> foregroundMessage}}
+   		{{> yield}}
+    </div>
+</template>

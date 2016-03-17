@@ -1,0 +1,37 @@
+<template name="login">
+		<div class="center-wrap">
+			<div id="logo">
+			</div>
+			{{#if isLoading}}
+				{{> loading}}
+					<p class=load-message >{{loadMessage}}</p>
+			{{else}}
+					<form id="facebook-registration">
+						<div id="fb-container">
+							<button id="facebook-registration-submit" class="general-button fb">
+								Login with Facebook
+							</button>
+						</div>
+						<p>or</p>
+					</form>
+
+				{{#if emailLogin}}
+						<form id="email-registration">
+							<div style="width:100%" id="email-field">
+								<input class="general-textbox" id="user-email" placeholder="Email" type="text">
+							</div>
+							<div style="width:100%" id="password-field">
+								<input class="general-textbox" id="user-pass" placeholder="Password" type="password">
+							</div>
+							<div style="width:100%" id="submit-field">
+								<button id="login-cont">
+									Login / Signup
+								</button>
+							</div>
+						</form>
+				{{else}}
+					<button id="email-toggle">Login / Signup with Email</button>
+				{{/if}}
+			{{/if}}
+		</div>
+</template>

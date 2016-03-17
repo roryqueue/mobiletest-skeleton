@@ -1,0 +1,9 @@
+<template name="searchContacts">
+  <input type="text" id="contact-query" maxlength="140" placeholder="Search contacts">
+  <br><br>
+  <table id="search-contact-table">
+      {{#each queryContacts}}
+        {{> contact}}
+      {{/each}}
+  </table>
+</template>

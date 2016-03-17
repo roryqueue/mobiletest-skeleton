@@ -1,0 +1,101 @@
+<template name="contactList">
+	<div class="title-header">
+		<div id="app-head">
+			<a href="/">
+				<button id="back-nav-toggle"></button>
+			</a>
+			<h1>Choose Friends</h1>
+		</div>
+	</div>
+	<div class="container">
+		<div class="center-wrap">
+			<div class="contact-form-cont">
+				<table id="friend-table">
+					<th>
+						<td>
+							<h1 class="contacts-header">My Friends:</h1>
+						</td>
+					</th>
+					<br>
+					{{#if anyFriends}}
+						<tr>
+							<td class="deselected-contact">
+								<input type="checkbox" id="select-all-friends" />
+								<label for="select-all-friends"></label>
+								<label for="select-all-friends">
+									<span class="contact-name">All My Friends</span>
+								</label>
+							</td>
+						</tr>
+						<br>
+						{{#each friends}}
+							{{> friend}}
+						{{/each}}
+					{{else}}
+						<br>
+						<tr>
+							<h2 id="no-friends" class="center-this">
+								There doesn't some seem to be anyone here.
+							</h2>
+						</tr>
+						<br><br>
+						<tr>
+							<h2 id="no-friends" class="center-this">Search for friends:</h2>
+						</tr>
+
+						<tr>
+							{{> findFriend}}
+						</tr>
+						<br>
+					{{/if}}
+				</table>
+
+				{{#if anyFriendRequests}}
+					<table>
+						<th>
+							<td>
+								<h1 class="contacts-header">Friend Requests:</h1>
+							</td>
+						</th>
+						<br>
+						{{#each friendRequests}}
+							{{> friendRequest}}
+						{{/each}}
+					</table>
+				{{/if}}
+
+				<h1 class="contacts-header center-this">My Contacts:</h1>
+				{{> searchContacts}}
+				<table id="contact-table">
+					{{#if anyContacts}}
+						{{#each recentContacts}}
+							{{> contact}}
+						{{/each}}
+						{{#each goodContacts}}
+							{{> contact}}
+						{{/each}}
+						{{#if moreContacts}}
+							<button id="load-more-contacts" class="more-contact-toggle">
+								Load More Contacts
+							</button>
+						{{/if}}
+					{{else}}
+						<br>
+						<tr>
+							<h2 id="no-contacts" class="center-this">
+								There doesn't some seem to be anyone here.
+							</h2>
+						</tr>
+						<br><br>
+						<tr>
+							{{> loadContacts}}
+						</tr>
+					{{/if}}
+				</table>
+			</div>
+
+			<div id="foot-spacer"></div>
+
+		</div>
+	</div>
+</template>

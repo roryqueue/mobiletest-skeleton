@@ -1,0 +1,37 @@
+<template name="options">
+  <div class="title-header">
+    <div id="app-head">
+      <a href="/">
+          <button id="back-nav-toggle"></button>
+      </a>
+      <h1>Options</h1>
+    </div>
+  </div>
+
+  <div class="container" id="option-pg">
+
+        <h1 id="search-title">Search for Friend in-App</h1>
+        {{#if searchOpen}}
+          {{> findFriend}}
+        {{/if}}
+
+        <h1 id="contacts-title">Find Friends from Contacts</h1>
+        {{#if contactsOpen}}
+          {{> loadContacts}}
+        {{/if}}
+
+        <h1 id="block-title">Block a User</h1>
+        {{#if blockOpen}}
+          {{> blockUser}}
+        {{/if}}
+
+        <h1 id="logout-title">Logout</h1>
+        {{#if logoutOpen}}
+          {{> logout}}
+        {{/if}}
+
+      <h1 id="contact-us">Contact Us</h1>
+
+
+  </div>
+</template>
